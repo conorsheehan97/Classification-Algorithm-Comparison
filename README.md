@@ -1,12 +1,44 @@
 # Classification-Algorithm-Comparison
-Here, we again use a manually labelled set of 1000 ImageJ pore samples to compare the performance of eight Parameter Optimised Classification algorithms. We then extropolate the best performing model to a larger, unlabelled 100,000 pore dataset, to assess pore distribution accross Gas Flows
+## Overview
+This project analyzes microscope images of cross-sections of 3D printed Titanium samples to classify and understand pore distribution across different gas flow rates. It compares the performance of eight Parameter Optimized Classification algorithms using a manually labeled set of 1000 ImageJ pore samples. The best performing model is then extrapolated to classify a larger, unlabeled dataset of 100,000 pores obtained at three different gas flow rates.
 
-Understanding how different morphologies of pores appear at different gas flow rates is an important step in the mitigation of these defects. For this project, Microscope images of cross sections of 3D printed Titanium samples were analysed using ImageJ Image processing software. This software contained a porosity analysis module which produced numeric data based on geometric features for each detected pore. 1000 pores were manually labelled into a Training dataset, which was a smaller subsection of the total of 100,000 pores. These 100,000 pores were obtained at 3 different Gas Flow rates.
+## Methodology
+### Data Collection and Preparation:
+- Microscope images processed using ImageJ software to analyze porosity, producing numeric data based on geometric features for each pore.
+ - 1000 pores manually labeled into a training dataset, which is a subset of a larger set of 100,000 pores obtained at varying gas flow rates.
 
-In this project, 8 different classification algorithms were analysed, based on their ability to classify this training dataset. How each model classifies the samples was also investigated. Parameters for each were optimised using GridSearchCV, with cross validation. The average Accuracy was obtained, as well as Recall, Precision and F1 score for each class. The best performing model, was the Gradient Boosted Classifier. The ROC, and AUC for this model, for each class was then obtained. 
+### Classification Algorithms:
+ - Eight algorithms (K-Nearest Neighbour, Naive Bayes, Decision Trees Classifier, Support Vector Machine, Logistic Regression, Multi-Layer Perceptron, Gradient Boosted Classifier, XGBoost) evaluated for their ability to classify the training dataset.
+ - Parameters optimized using GridSearchCV with cross-validation to maximize accuracy, recall, precision, and F1 score.
 
-The Gradient Boosted Classifier was then used, on the 100,000 pore dataset, in order to show that the largest, and most irregular pores (Lack of Fusion) are inversely proportional to the Gas Flow rate in 3D printing. 
+### Model Evaluation:
+ - Average accuracy, recall, precision, and F1 score calculated for each class and overall.
+ - Gradient Boosted Classifier identified as the best performing model based on evaluation metrics, with ROC and AUC analysis conducted for each class.
 
-Models used: K-Nearest Neighbour, Naive Bayes, Decision Trees Classifier, Support Vector Machine, Logistic Regression, Multi-Layer Perceptron, Gradient Boosted Classifier, XGBoost,
+### Extrapolation to Larger Dataset:
+ - Gradient Boosted Classifier applied to the 100,000 pore dataset to assess pore distribution across different gas flow rates.
+ - Findings indicate an inverse relationship between the size and irregularity of pores (e.g., Lack of Fusion) and gas flow rate in 3D printing.
 
-Libraries used: Pandas, Numpy, Scikitlearn, Tensorflow, Pickle, Seaborn, XGBoost
+### Models Used
+ - K-Nearest Neighbour
+ - Naive Bayes
+ - Decision Trees Classifier
+ - Support Vector Machine
+ - Logistic Regression
+ - Multi-Layer Perceptron
+ - Gradient Boosted Classifier
+ - XGBoost
+
+### Libraries Used
+ - Pandas
+ - Numpy
+ - Scikit-learn
+ - Matplotlib
+ - Seaborn
+
+## Conclusion
+This project demonstrates the application of multiple classification algorithms to classify pores in 3D printed Titanium samples based on image analysis data. By leveraging machine learning techniques and parameter optimization, it identifies the Gradient Boosted Classifier as the most effective model for classifying pore types. The extrapolation of this model to a larger dataset provides insights into pore distribution trends across different gas flow rates, contributing to advancements in 3D printing quality control.
+
+Contributions and feedback are welcome to enhance this project's capabilities and extend its applications in materials science and additive manufacturing.
+
+
